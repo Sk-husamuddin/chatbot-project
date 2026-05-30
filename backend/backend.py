@@ -81,6 +81,7 @@ def save_history(messages):
 
 messages=load_history()
 
+MAX_MESSAGES = 20
 class ChatRequest(BaseModel):
     message:str
 
@@ -92,12 +93,13 @@ def chat(request : ChatRequest):
             "content":request.message
         }
     )
+    
+    messages_to_send = [messages[0]] + messages[-MAX_MESSAGES:]
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=messages
-    )
-
+    model="llama-3.3-70b-versatile",
+    messages=messages_to_send
+        )
     reply = response.choices[0].message.content
 
     messages.append(
