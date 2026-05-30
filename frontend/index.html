@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HMN-Your personal AI assistant</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <center><h2>HMN-Your personal AI assistant</h2></center>
+        <div class="chat-layout">
+            <div id="output" class="ai-response"></div>
+            <div class="input-bar">
+                <input type="text" id="userinput" class="user-input input" placeholder="Ask anything">
+                <button id="send-btn" type="button">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path
+                                    fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span>Send</span>
+                </button>
+            </div>
+        </div>
+    </body>
+    <script>
+        const output = document.getElementById("output");
+        const userinput = document.getElementById("userinput");
+        const sendbtn = document.getElementById("send-btn");
+
+        function addmessage(role,text){
+            const message = document.createElement("div");
+            message.classList.add(role==="user"?"user-msg":"ai-msg");
+            message.textContent=text;
+            output.appendChild(message);
+            output.scrollTop = output.scrollHeight;
+        }
+
+        async function sendmessage()
+        {
+            const message = userinput.value.trim();
+            if(!message){return;}
+
+            addmessage("user",message);
+            userinput.value="";
+
+            const thinkingMessage = document.createElement("div");
+            thinkingMessage.classList.add("ai-msg");
+            thinkingMessage.textContent = "Thinking...";
+            output.appendChild(thinkingMessage);
+            output.scrollTop = output.scrollHeight;
+
+            try{
+                    const response = await fetch("http://localhost:8000/chat",{
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({
+                        message:message
+                    })
+                    })
+                    const data = await response.json();
+                    thinkingMessage.textContent = data.reply;
+                }catch(error)
+                {
+                    thinkingMessage.textContent = `Error - ${error}`;
+                }
+        }
+        sendbtn.addEventListener("click",sendmessage);
+
+        userinput.addEventListener("keypress",(e)=>{
+                    if(e.key === "Enter"){
+                        sendmessage();
+                    }
+                })
+    </script>
+</html>
