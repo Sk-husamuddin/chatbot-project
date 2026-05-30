@@ -1,3 +1,5 @@
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4e2e1b60-6cd2-4b11-a6d9-68706f22de5b" />
+
 # 🤖 HMN - Personal AI Assistant
 
 HMN is a full-stack AI chatbot built using FastAPI, Groq LLMs, HTML, CSS, and JavaScript. The application provides an interactive chat experience where users can ask questions related to programming, learning, productivity, career guidance, and general knowledge.
@@ -61,7 +63,7 @@ chatbot-project/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/chatbot-project.git
+git clone https://github.com/sk-husamuddin/chatbot-project.git
 cd chatbot-project
 ```
 
