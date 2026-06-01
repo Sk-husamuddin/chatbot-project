@@ -43,8 +43,8 @@ html, body {
     }
 
     .user-msg {
-        background-color: #374151;
-        color: #fffcef;
+        background-color: #3a0940;
+        color: #d9c5b4;
         border-radius: 12px;
         padding: 10px 14px;
         margin: 0;
@@ -56,8 +56,8 @@ html, body {
     }
 
     .ai-msg {
-        background-color: #86efac;
-        color:#1f2937;
+        background-color: #011f42;
+        color:whitesmoke;
         border-radius: 12px;
         padding: 10px 14px;
         margin: 0;
