@@ -1,4 +1,5 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4e2e1b60-6cd2-4b11-a6d9-68706f22de5b" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/42ede222-6a83-41c8-a039-57111ab88643" />
+
 
 # 🤖 HMN - Personal AI Assistant
 
