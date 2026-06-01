@@ -9,13 +9,16 @@ html, body {
         flex-direction: column;
         padding: 12px;
         box-sizing: border-box;
-        background-color: #fff;
+        background-color: #e9e9e3;
         overflow: hidden;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
     h2{
         text-align: center;
         margin: 0 0 10px 0;
         font-size: 1.5rem;
+        color:#011f42;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     }
 
     .chat-layout {
@@ -32,18 +35,18 @@ html, body {
         overflow-y: auto;
         padding: 10px;
         border: 1px solid #ddd;
-        border-radius: 6px;
-        background-color: #f7f7f7;
+        border-radius: 9px;
+        background-color: #fff9eb; 
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
     .user-msg {
-        background-color: #d1e7ff;
-        color: #1f2937;
+        background-color: #6091ac;
+        color: #fffcef;
         border-radius: 12px;
-        padding: 12px 14px;
+        padding: 10px 14px;
         margin: 0;
         margin-left: auto;
         max-width: 75%;
@@ -53,15 +56,14 @@ html, body {
     }
 
     .ai-msg {
-        background-color: #ffffff;
-        color: #111827;
+        background-color: #e03b3b;
+        color:whitesmoke;
         border-radius: 12px;
-        padding: 14px 16px;
+        padding: 10px 14px;
         margin: 0;
         margin-right: auto;
         max-width: 82%;
         align-self: flex-start;
-        border: 1px solid #d1d5db;
         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         line-height: 1.55;
         white-space: pre-wrap;
@@ -75,10 +77,11 @@ html, body {
         z-index: 10;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 7px;
         padding: 10px 0 0;
         background-color: #fff;
         border-top: 1px solid #e5e7eb;
+        border-radius: 9px;
     }
 
     .user-input {
@@ -87,16 +90,16 @@ html, body {
         padding: 10px 12px;
         border: 1px solid #ccc;
         border-radius: 6px;
-        height: 50px;
+        height: 30px;
         font-size: 16px;
     }
 
     #send-btn {
         padding: 10px 14px;
         border-radius: 6px;
-        border: 1px solid #2563eb;
-        background: #2563eb;
-        color: #fff;
+        border: 1px solid #000000;
+        background: #000000;
+        color: #fbf9e4;
         cursor: pointer;
     }
 
@@ -135,7 +138,7 @@ html, body {
 .input {
     border: 2px solid transparent;
     width: 15em;
-    height: 2.5em;
+    height: 1.5em;
     padding-left: 0.8em;
     outline: none;
     overflow: hidden;
@@ -145,8 +148,7 @@ html, body {
 }
 
 .input:hover,.input:focus {
-    border: 2px solid #4A9DEC;
-    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    border: 2px solid #011f42   ;
     background-color: white;
 }
 
